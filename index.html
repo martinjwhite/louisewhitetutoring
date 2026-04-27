@@ -11,12 +11,14 @@
 
   <style>
     :root {
-      --bg: #f7f7f4;
-      --text: #222;
-      --muted: #555;
+      --bg: #f4f8fb;
+      --text: #1f2933;
+      --muted: #4f5d6b;
       --accent: #2f5d62;
+      --accent-soft: #e5f0ef;
       --card: #ffffff;
-      --border: #dcdcd6;
+      --border: #d6e1e8;
+      --shadow: 0 10px 24px rgba(40, 62, 81, 0.08);
     }
 
     * {
@@ -27,7 +29,7 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background: linear-gradient(180deg, #eef5fb 0%, var(--bg) 45%);
       line-height: 1.6;
     }
 
@@ -42,23 +44,50 @@
     footer {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 28px;
       margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      text-align: center;
+      background: linear-gradient(135deg, #f9fcff 0%, #edf5fa 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      display: block;
+      width: 140px;
+      height: 4px;
+      margin: 16px auto 0;
+      background: linear-gradient(90deg, #79aab0 0%, var(--accent) 100%);
+      border-radius: 999px;
     }
 
     h1 {
       margin: 0 0 8px;
       color: var(--accent);
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2.3rem, 5vw, 3.4rem);
       line-height: 1.15;
+      letter-spacing: 0.03em;
+      font-weight: 700;
+      text-shadow: 0 3px 10px rgba(47, 93, 98, 0.15);
     }
 
     h2 {
       margin: 0 0 16px;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       color: var(--text);
       font-weight: 600;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      color: var(--text);
     }
 
     p {
@@ -77,22 +106,76 @@
     }
 
     .tagline {
-      font-size: 1.1rem;
-      color: var(--muted);
+      font-size: 1.05rem;
+      color: #355763;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      font-weight: 600;
       margin-bottom: 0;
     }
 
-    .highlight {
+    .hero-image {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 18px 0 6px;
+      display: block;
+    }
+
+    .intro-text {
+      margin-top: 14px;
+    }
+
+    .section-card {
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .section-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--accent-soft);
       color: var(--accent);
-      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      border: 1px solid #d0e4e1;
+      flex-shrink: 0;
+    }
+
+    .rates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .mini-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
     }
 
     .contact-box {
       background: #eef4f3;
       border-left: 4px solid var(--accent);
       padding: 16px;
-      border-radius: 8px;
-      margin-top: 18px;
+      border-radius: 10px;
+      margin-top: 22px;
     }
 
     footer {
@@ -109,6 +192,12 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .image-credit {
+      margin: 8px 0 0;
+      font-size: 0.85rem;
+      color: #6b7b88;
+    }
   </style>
 </head>
 <body>
@@ -119,24 +208,105 @@
     </header>
 
     <main>
-      <h2>Private Tutoring for Primary School Children</h2>
-      <p>
-        Louise White Tutoring provides friendly, supportive private tuition in
-        <span class="highlight">literacy</span> and <span class="highlight">numeracy</span>
-        for primary school aged children.
+      <h2>Experienced, Personalised Primary Tuition</h2>
+      <img
+        class="hero-image"
+        src="letters.jpg"
+        alt="jumbled multi-coulored magnetic letters on a board"
+      >
+      <p class="intro-text">
+        With over 30 years of experience as a primary teacher, I bring a deep
+        passion for helping children develop confidence and success in reading,
+        writing, and maths.
       </p>
       <p>
-        Specialised support is also available for children with
-        <span class="highlight">dyscalculia</span>.
+        My years of teaching in primary schools have shown me that some children
+        need more time than the classroom can always provide. When children move
+        on before fully understanding a concept, this can affect confidence and
+        progress. I help identify gaps in learning and build bespoke programmes
+        that close those gaps and support lasting confidence.
       </p>
 
-      <h2>What to Expect</h2>
-      <ul>
-        <li>Tailored one-to-one tutoring.</li>
-        <li>Clear, patient explanations.</li>
-        <li>Support designed around each child’s needs.</li>
-        <li>A calm and encouraging learning environment.</li>
-      </ul>
+      <section class="section-card">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">📚</span>
+          <h3>Areas of Support</h3>
+        </div>
+        <ul>
+          <li>Specialist phonics teaching across EYFS and KS1.</li>
+          <li>Support to close learning gaps and prepare for the Year 1 Phonics Screening Check.</li>
+          <li>Tailored early maths and KS2 learning support.</li>
+          <li>Sessions adapted to each child's individual needs.</li>
+        </ul>
+      </section>
+
+      <section class="section-card">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">🤝</span>
+          <h3>Additional Needs and Nurture Approach</h3>
+        </div>
+        <p>
+          Working within an accredited nurture school, I have a strong background
+          in supporting children with additional needs and EHCPs in a calm,
+          trauma-informed, and nurturing way.
+        </p>
+        <p>
+          I have experience working with children with specific learning
+          difficulties, sensory needs, anxiety, social and communication
+          differences, as well as dyslexia, ADHD, and ASD.
+        </p>
+      </section>
+
+      <section class="section-card">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">🧠</span>
+          <h3>How Sessions Work</h3>
+        </div>
+        <p>
+          My approach is gentle, supportive, and personalised. Sessions include
+          brain breaks and confidence-building activities to help every child feel
+          safe, motivated, and ready to learn.
+        </p>
+        <p>
+          I offer daytime, evening, and weekend sessions, and I am available
+          during school holidays.
+        </p>
+      </section>
+
+      <section class="section-card">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">💷</span>
+          <h3>Rates and Payment</h3>
+        </div>
+        <p>Payment is kindly requested up front via bank transfer.</p>
+        <div class="rates-grid">
+          <div class="mini-card">
+            <strong>Pay-As-You-Go</strong>
+            <p>£35/hour (at my home)</p>
+            <p>£40/hour (traveling)</p>
+          </div>
+          <div class="mini-card">
+            <strong>Block Booking (6 lessons)</strong>
+            <p>£30/hour (at my home)</p>
+            <p>£35/hour (traveling)</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">🕒</span>
+          <h3>Cancellation Policy</h3>
+        </div>
+        <ul>
+          <li>Please give 24 hours' notice and there will be no charge.</li>
+          <li>Less than 24 hours' notice: full session fee charged.</li>
+          <li>
+            In instances of illness or emergencies, there is no charge as long as
+            the session can be rearranged.
+          </li>
+        </ul>
+      </section>
 
       <div class="contact-box">
         <p><strong>Email:</strong> <a href="mailto:contact@louisewhitetutoring.com">contact@louisewhitetutoring.com</a></p>
