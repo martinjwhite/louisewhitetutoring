@@ -170,6 +170,21 @@
       padding: 12px;
     }
 
+    .areas-list {
+      columns: 3;
+      column-gap: 28px;
+    }
+
+    .areas-list li {
+      break-inside: avoid;
+    }
+
+    @media (max-width: 720px) {
+      .areas-list {
+        columns: 1;
+      }
+    }
+
     .contact-box {
       background: #eef4f3;
       border-left: 4px solid var(--accent);
@@ -291,6 +306,57 @@
             <p>£35/hour (traveling)</p>
           </div>
         </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">📍</span>
+          <h3>Areas Covered</h3>
+        </div>
+        <ul class="areas-list">
+          <li>Chester</li>
+          <li>Saughall</li>
+          <li>Hoole</li>
+          <li>Upton</li>
+          <li>Farndon</li>
+          <li>Holt</li>
+          <li>Tattenhall</li>
+          <li>Blacon</li>
+          <li>Westminster Park</li>
+          <li>Saltney</li>
+          <li>Queensferry</li>
+          <li>Connah's Quay</li>
+          <li>Garden City</li>
+          <li>Mollington</li>
+          <li>Ellesmere Port</li>
+          <li>Little Sutton</li>
+          <li>Broughton</li>
+          <li>Boughton</li>
+          <li>Vicar's Cross</li>
+          <li>Great Sutton</li>
+          <li>Littleton</li>
+          <li>Christleton</li>
+          <li>Moston</li>
+          <li>Huntington</li>
+          <li>Rowton</li>
+          <li>Guilden Sutton</li>
+          <li>Great Barrow</li>
+          <li>Waverton</li>
+          <li>Eccleston</li>
+          <li>Ewloe</li>
+          <li>Mancot</li>
+          <li>Sandycroft</li>
+          <li>Northop</li>
+          <li>Shotwick</li>
+          <li>Woodbank</li>
+          <li>Ledsham</li>
+          <li>Heswall</li>
+          <li>Willaston</li>
+          <li>Neston</li>
+          <li>Parkgate</li>
+          <li>Burton</li>
+          <li>Puddington</li>
+        </ul>
       </section>
 
       <section class="section-card">
