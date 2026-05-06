@@ -20,14 +20,14 @@
 
   <style>
     :root {
-      --bg: #f4f8fb;
-      --text: #1f2933;
-      --muted: #4f5d6b;
+      --bg: #f3f7fb;
+      --text: #18212b;
+      --muted: #344657;
       --accent: #2f5d62;
       --accent-soft: #e5f0ef;
       --card: #ffffff;
-      --border: #d6e1e8;
-      --shadow: 0 10px 24px rgba(40, 62, 81, 0.08);
+      --border: #d3dde7;
+      --shadow: 0 8px 20px rgba(23, 39, 54, 0.06);
     }
 
     * {
@@ -36,9 +36,10 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 17px;
       color: var(--text);
-      background: linear-gradient(180deg, #eef5fb 0%, var(--bg) 45%);
+      background: var(--bg);
       line-height: 1.6;
     }
 
@@ -61,7 +62,7 @@
 
     header {
       text-align: center;
-      background: linear-gradient(135deg, #f9fcff 0%, #edf5fa 100%);
+      background: #f8fbff;
       position: relative;
       overflow: hidden;
     }
@@ -91,6 +92,7 @@
       font-size: 1.3rem;
       color: var(--text);
       font-weight: 600;
+      text-align: center;
     }
 
     h3 {
@@ -135,7 +137,7 @@
     }
 
     .quick-nav {
-      margin-top: 22px;
+      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -160,8 +162,9 @@
     .hero-cta-group {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
-      margin: 16px 0 8px;
+      margin: 14px 0 8px;
     }
 
     .button-link {
@@ -199,24 +202,61 @@
       color: var(--muted);
     }
 
+    .trust-strip {
+      margin-top: 12px;
+      background: #f7fbfb;
+      border: 1px solid #d8e8e6;
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 14px;
+      font-size: 0.92rem;
+      color: #2f4a57;
+    }
+
+    .trust-chip {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      white-space: normal;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .trust-chip::before {
+      content: "•";
+      color: #4a7b75;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .mobile-sticky-cta {
+      display: none;
+    }
+
     .intro-text {
       margin-top: 14px;
     }
 
     .section-card {
-      background: #fbfdff;
+      background: #ffffff;
       border: 1px solid var(--border);
-      border-left: 5px solid var(--accent);
+      border-left: 4px solid var(--accent);
       border-radius: 12px;
-      padding: 18px;
-      margin-top: 18px;
+      padding: 22px;
+      margin-top: 22px;
     }
 
     .section-title {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
     .section-icon {
@@ -257,8 +297,35 @@
     }
 
     @media (max-width: 720px) {
+      body {
+        font-size: 18px;
+      }
+
       .hero-image {
         height: auto;
+      }
+
+      .page {
+        padding-bottom: 88px;
+      }
+
+      .mobile-sticky-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        gap: 8px;
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.97);
+        border-top: 1px solid var(--border);
+        box-shadow: 0 -6px 18px rgba(18, 36, 52, 0.08);
+        z-index: 1000;
+      }
+
+      .mobile-sticky-cta .button-link {
+        flex: 1;
+        text-align: center;
       }
 
       .areas-list {
@@ -323,20 +390,24 @@
       >
       <p class="intro-text">
         I am Louise White, a primary tutor in Chester with over 30 years of
-        teaching experience. I help children grow in confidence and make steady
-        progress in phonics, reading, writing, and maths through personalised,
-        one-to-one support.
+        teaching experience. I provide calm, one-to-one support to help children
+        build confidence and make steady progress in phonics, reading, writing,
+        and maths.
       </p>
       <p>
-        My years in primary schools have shown me that some children simply need
-        more time and the right approach than a busy classroom can always offer.
-        I carefully identify learning gaps and create bespoke plans that close
-        those gaps and help children feel secure, capable, and ready to learn.
+        Every child learns differently. I identify learning gaps, tailor each
+        session to your child, and help them feel secure, capable, and ready to
+        enjoy learning again.
       </p>
       <div class="hero-cta-group">
-        <a class="button-link primary" href="#contact">Book a Free 15-Minute Call</a>
-        <a class="button-link secondary" href="mailto:contact@louisewhitetutoring.com">Email Louise</a>
+        <a class="button-link primary" href="#contact">Book a Free Parent Call</a>
+        <a class="button-link secondary" href="mailto:contact@louisewhitetutoring.com">Ask a Quick Question</a>
         <a class="button-link secondary" href="tel:+447792401392">Call 0779 2401392</a>
+      </div>
+      <div class="trust-strip" aria-label="Key trust points">
+        <span class="trust-chip">30+ years teaching experience</span>
+        <span class="trust-chip">SEN and EHCP experience</span>
+        <span class="trust-chip">Chester and surrounding areas</span>
       </div>
       <p>
         I support families across Chester and surrounding areas with one-to-one
@@ -351,6 +422,18 @@
         <a href="#faq">FAQs</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <section class="section-card">
+        <div class="section-title">
+          <span class="section-icon" aria-hidden="true">🧭</span>
+          <h3>How to Get Started</h3>
+        </div>
+        <ol>
+          <li>Book a free 15-minute parent call so we can discuss your child's needs.</li>
+          <li>Receive a recommended support plan and session options that fit your family.</li>
+          <li>Begin one-to-one sessions with regular, progress-focused feedback.</li>
+        </ol>
+      </section>
 
       <section class="section-card">
         <div class="section-title">
@@ -426,18 +509,6 @@
           Sessions are available from my home in Saughall or via travel within
           covered local areas.
         </p>
-      </section>
-
-      <section class="section-card">
-        <div class="section-title">
-          <span class="section-icon" aria-hidden="true">🧭</span>
-          <h3>How to Get Started</h3>
-        </div>
-        <ol>
-          <li>Book a free 15-minute parent call so we can discuss your child's needs.</li>
-          <li>Receive a recommended support plan and session options that fit your family.</li>
-          <li>Begin one-to-one sessions with regular, progress-focused feedback.</li>
-        </ol>
       </section>
 
       <section class="section-card" id="rates">
@@ -547,6 +618,7 @@
       <div class="contact-box" id="contact">
         <h3>Ready to Talk?</h3>
         <p>Get in touch to arrange your free 15-minute parent call.</p>
+        <p>I usually reply to new enquiries within 24 hours.</p>
         <p><strong>Email:</strong> <a href="mailto:contact@louisewhitetutoring.com">contact@louisewhitetutoring.com</a></p>
         <p><strong>Phone:</strong> <a href="tel:+447792401392">0779 2401392</a></p>
         <div class="contact-actions">
@@ -559,6 +631,10 @@
     <footer>
       <p>&copy; 2026 Louise White Tutoring. All rights reserved.</p>
     </footer>
+  </div>
+  <div class="mobile-sticky-cta" aria-label="Quick contact">
+    <a class="button-link primary" href="tel:+447792401392">Call</a>
+    <a class="button-link secondary" href="mailto:contact@louisewhitetutoring.com?subject=Tutoring%20Enquiry">Email</a>
   </div>
   <script type="application/ld+json">
     {
