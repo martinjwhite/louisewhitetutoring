@@ -23,9 +23,9 @@
       --bg: #f3f7fb;
       --text: #18212b;
       --muted: #344657;
-      --accent: #2f5d62;
+      --accent: #596a60;
       --accent-soft: #e5f0ef;
-      --card: #ffffff;
+      --card: #fbf6f2;
       --border: #d3dde7;
       --shadow: 0 8px 20px rgba(23, 39, 54, 0.06);
     }
@@ -62,7 +62,7 @@
 
     header {
       text-align: center;
-      background: #f8fbff;
+      background: #fbf6f2;
       position: relative;
       overflow: hidden;
     }
@@ -77,14 +77,17 @@
       border-radius: 999px;
     }
 
-    h1 {
-      margin: 0 0 8px;
-      color: var(--accent);
-      font-size: clamp(2.3rem, 5vw, 3.4rem);
-      line-height: 1.15;
-      letter-spacing: 0.03em;
-      font-weight: 700;
-      text-shadow: 0 3px 10px rgba(47, 93, 98, 0.15);
+    .header-logo {
+      margin: 0;
+      line-height: 0;
+    }
+
+    .site-logo {
+      display: block;
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      margin: 0 auto;
     }
 
     h2 {
@@ -116,15 +119,6 @@
       margin-bottom: 8px;
     }
 
-    .tagline {
-      font-size: 1.05rem;
-      color: #355763;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 0;
-    }
-
     .hero-image {
       width: 100%;
       height: clamp(180px, 28vw, 340px);
@@ -137,7 +131,7 @@
     }
 
     .quick-nav {
-      margin-top: 18px;
+      margin: 30px 0px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -164,7 +158,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin: 14px 0 8px;
+      margin: 30px 0 10px;
     }
 
     .button-link {
@@ -203,7 +197,7 @@
     }
 
     .trust-strip {
-      margin-top: 12px;
+      margin: 40px 0px 20px;
       background: #f7fbfb;
       border: 1px solid #d8e8e6;
       border-radius: 10px;
@@ -296,9 +290,23 @@
       break-inside: avoid;
     }
 
+    @media (max-width: 1024px) {
+      .site-logo {
+        max-width: 800px;
+      }
+    }
+
     @media (max-width: 720px) {
       body {
         font-size: 18px;
+      }
+
+      .site-logo {
+        max-width: min(92vw, 600px);
+      }
+
+      header {
+        padding: 20px 16px;
       }
 
       .hero-image {
@@ -373,13 +381,21 @@
 <body>
   <div class="page">
     <header>
-      <h1>Louise White Tutoring</h1>
-      <p class="tagline">Making Sense of Letters and Numbers</p>
+      <div class="header-logo">
+        <img
+          class="site-logo"
+          src="img/louisewhitetutoringlogo.png"
+          alt="Louise White Tutoring — Making Sense of Letters and Numbers"
+          width="1040"
+          height="400"
+          decoding="async"
+        >
+      </div>
     </header>
 
     <main>
       <h2>Experienced, Personalised Primary Tuition in Chester</h2>
-      <img
+      <!--<img
         class="hero-image"
         src="letters.jpg"
         alt="Jumbled multi-coloured magnetic letters on a board"
@@ -387,7 +403,7 @@
         height="675"
         fetchpriority="high"
         decoding="async"
-      >
+      >-->
       <p class="intro-text">
         I am Louise White, a primary tutor in Chester with over 30 years of
         teaching experience. I provide calm, one-to-one support to help children
